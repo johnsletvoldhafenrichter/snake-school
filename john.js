@@ -1,5 +1,5 @@
-const gameMatrix = [];
-let gameCanvas = document.getElementById("gameCanvas")
+document.gameMatrix = [];
+document.gameCanvas = document.getElementById("gameCanvas")
 
 for (let i = 0; i < 8; i++) {
     let array = []
@@ -33,4 +33,7 @@ function createGameBoard() {
         gameCanvas.appendChild(row);
     }
 }
-console.log(gameCanvas);
+
+function createApple() {
+
+}
