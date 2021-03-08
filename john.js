@@ -1,5 +1,5 @@
-document.gameMatrix = [];
-document.gameCanvas = document.getElementById("gameCanvas")
+this.gameMatrix = [];
+this.gameCanvas = document.getElementById("gameCanvas")
 
 for (let i = 0; i < 8; i++) {
     let array = []
