@@ -44,8 +44,21 @@ function createApple() {
     let id = "box" + appleElementX + appleElementY;
     let boxToBeApple = document.getElementById(id);
     boxToBeApple.classList.add("apple");
+    checkSnakePositionWithApplePosition();
 }
 
 function makeCoord() {
     return Math.round(Math.random() * (gameMatrix.length - 1));
+}
+
+function checkSnakePositionWithApplePosition() {
+    let apple = document.getElementsByClassName("apple")[0];
+    for (let i = 0; i < this.snake.length; i++) {
+        if (this.snake[i] === apple.id) {
+            this.snake.push(apple.id)
+            createApple();
+            return true;
+        }
+    }
+    return false;
 }
