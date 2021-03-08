@@ -36,9 +36,16 @@ function createGameBoard() {
 
 function createApple() {
     let oldApple = document.getElementsByClassName("apple")[0];
-    oldApple.classList.remove("apple")
-    let appleElement = Math.round(Math.random() * (gameMatrix.length * gameMatrix.length));
-    let id = "box" + appleElement;
+    if (oldApple) {
+        oldApple.classList.remove("apple")
+    }
+    let appleElementX = makeCoord();
+    let appleElementY = makeCoord();
+    let id = "box" + appleElementX + appleElementY;
     let boxToBeApple = document.getElementById(id);
     boxToBeApple.classList.add("apple");
+}
+
+function makeCoord() {
+    return Math.round(Math.random() * (gameMatrix.length - 1));
 }
