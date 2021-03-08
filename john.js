@@ -61,3 +61,17 @@ function checkSnakePositionWithApplePosition() {
     }
     return false;
 }
+
+function checkSnakePositionWithWallPosition() {
+    let id = this.snake[0].slice(-2);
+
+    console.log(id.slice(0, 1), id.slice(1))
+    if (id.slice(1) == 0 || id.slice(1) == 7) {
+
+        console.log(id)
+
+    } else if (id.slice(0, 1) == 0 || id.slice(0, 1) == 7) {
+
+        console.log(id)
+    }
+}
