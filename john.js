@@ -17,6 +17,7 @@ for (let i = 0; i < 8; i++) {
 
 
 createGameBoard();
+createApple();
 
 function createGameBoard() {
     for (let i = 0; i < gameMatrix.length; i++) {
