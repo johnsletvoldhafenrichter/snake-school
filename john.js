@@ -79,3 +79,19 @@ function checkSnakePositionWithWallPosition(idTest) {
 
     return idTest
 }
+
+window.addEventListener("keydown", function(e) {
+    console.log(e.key)
+    if (e.key === "ArrowDown") {
+        e.preventDefault()
+    };
+    if (e.key === "ArrowUp") {
+        e.preventDefault()
+    };
+    if (e.key === "ArrowLeft") {
+        e.preventDefault()
+    };
+    if (e.key === "ArrowRight") {
+        e.preventDefault()
+    };
+});
