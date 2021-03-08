@@ -4,9 +4,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 15rem 1fr;
-    grid-template-areas: 
-        "header"
-        "game";
+    grid-template-areas: "header" "game";
     font-family: Helvetica, sans-serif;
     font-size: 2rem;
 }
@@ -30,7 +28,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-
 }
 
 .row {
@@ -40,4 +37,11 @@
 
 .box {
     flex: 1;
+}
+
+
+/* JOHN CSS************************************/
+
+.apple {
+    background-color: green !important;
 }

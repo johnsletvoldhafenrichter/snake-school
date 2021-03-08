@@ -35,5 +35,10 @@ function createGameBoard() {
 }
 
 function createApple() {
-
+    let oldApple = document.getElementsByClassName("apple")[0];
+    oldApple.classList.remove("apple")
+    let appleElement = Math.round(Math.random() * (gameMatrix.length * gameMatrix.length));
+    let id = "box" + appleElement;
+    let boxToBeApple = document.getElementById(id);
+    boxToBeApple.classList.add("apple");
 }
