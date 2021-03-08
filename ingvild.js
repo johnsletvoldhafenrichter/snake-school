@@ -1,23 +1,37 @@
-this.snake = {
-    position: 44,
-    direction: 'E'
-}
+this.snake = ['box43']
+
+this.direction = 'E'
 
 setInterval(function(){
     move();
-}, 5000);
+}, 1000);
 
 
 function move() {
-    console.log(snake.position)
-    console.log(this.snake.position);
-    let id = `box${snake.position}`;
+    for (let i = 0; i < snake.length; i++) {
+        let snakePart = document.getElementById(this.snake[i]);
+        snakePart.className = 'box';
+    }
+    let newNumber = Number(this.snake[0].slice(3)) + positionChange();
+
+    let newId = 'box' + newNumber;
+
+    snake.unshift(newId);
+    if (!checkSnakePositionWithApplePosition()) {
+        snake.pop();
+    }
+    for (let i = 0; i < snake.length; i++) {
+        let snakePart = document.getElementById(this.snake[i]);
+        snakePart.classList.add('snake');
+    }
+    
 }
 
 
 
-function positionChange(snake) {
-    switch (snake.direction) {
+
+function positionChange() {
+    switch (direction) {
         case 'N':
             return - 10;
         case 'S':
