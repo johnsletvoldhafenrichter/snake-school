@@ -18,11 +18,15 @@ function move() {
     }
 
     let newId = 'box' + newNumber;
+    console.log(newId);
 
-    snake.unshift(newId);
+    // snake.unshift(newId);
+    snake.unshift(checkSnakePositionWithWallPosition(newId));
+
     if (!checkSnakePositionWithApplePosition()) {
         snake.pop();
     }
+
     for (let i = 0; i < snake.length; i++) {
         let snakePart = document.getElementById(this.snake[i]);
         snakePart.classList.add('snake');
@@ -45,3 +49,24 @@ function positionChange() {
             return - 1;   
     }
 }
+
+
+window.addEventListener("keydown", function(e) {
+    console.log(e.key)
+    if (e.key === "ArrowDown") {
+        e.preventDefault();
+        direction = 'S';
+    };
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        direction = 'N';
+    };
+    if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        direction = 'W';
+    };
+    if (e.key === "ArrowRight") {
+        e.preventDefault();
+        direction = 'E';
+    };
+});
