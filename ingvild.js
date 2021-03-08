@@ -1,6 +1,6 @@
 this.snake = ['box43']
 
-this.direction = 'E'
+this.direction = 'N'
 
 setInterval(function(){
     move();
@@ -13,6 +13,9 @@ function move() {
         snakePart.className = 'box';
     }
     let newNumber = Number(this.snake[0].slice(3)) + positionChange();
+    if (newNumber < 10) {
+        newNumber = '0' + newNumber;
+    }
 
     let newId = 'box' + newNumber;
 
@@ -39,6 +42,6 @@ function positionChange() {
         case 'E':
             return + 1;
         case 'W':
-            return + 1;   
+            return - 1;   
     }
 }
